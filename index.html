@@ -76,7 +76,7 @@ header{
 }
 .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 20px;max-width:var(--maxw);margin:0 auto}
 .brand{display:flex;align-items:center;line-height:1.1}
-.brand img{width:74px;height:74px;object-fit:contain;display:block}
+.brand img{width:74px;height:74px;object-fit:cover;display:block;border-radius:50%;aspect-ratio:1/1;border:2px solid rgba(229,194,117,.75);box-shadow:0 4px 14px rgba(0,0,0,.22)}
 
 .nav-links{display:flex;align-items:center;gap:26px}
 .nav-links a{color:var(--cream);font-size:.92rem;font-weight:500;opacity:.9;position:relative;padding:4px 0}
@@ -141,9 +141,15 @@ header{
 .size-row .btn{padding:11px 16px;font-size:.82rem;min-height:44px;flex:1 1 150px}
 .ask{background:var(--cream);border:1px dashed var(--gold);border-radius:14px;padding:14px;text-align:center}
 .ask p{margin:0 0 12px;color:var(--maroon);font-family:Marcellus,serif}
-@media(max-width:420px){
-  .size-row{flex-direction:column;align-items:stretch;text-align:left}
-  .size-row .btn{width:100%}
+@media(max-width:600px){
+  .size-row{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:10px;padding:10px 10px 10px 14px}
+  .size-row .btn{width:auto;min-width:148px;flex:0 0 auto;padding:10px 14px;font-size:.78rem;min-height:46px;white-space:nowrap}
+}
+@media(max-width:380px){
+  .nav{padding:10px 14px}
+  .brand img{width:62px;height:62px}
+  .size-row{grid-template-columns:1fr}
+  .size-row .btn{width:100%;min-width:0}
 }
 
 /* ============ SIGNATURE HALWA FEATURE ============ */
@@ -164,7 +170,7 @@ header{
 .halwa-prices{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-bottom:14px}.halwa-price{padding:9px 4px;border-radius:11px;background:rgba(255,255,255,.07);border:1px solid rgba(229,194,117,.24)}.halwa-price span{display:block;font-size:.62rem;color:#e5c275;letter-spacing:.08em;text-transform:uppercase}.halwa-price strong{display:block;margin-top:2px;font-family:Marcellus,serif;color:#fff;font-size:.98rem}
 .halwa-orders{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.halwa-orders .btn-wa{width:100%;justify-content:center;min-height:42px;padding:9px 6px;font-size:.72rem}.halwa-note{position:relative;z-index:1;text-align:center;margin-top:26px;color:rgba(255,255,255,.62);font-size:.76rem;letter-spacing:.06em}.halwa-note span{color:#e5c275}
 @media(max-width:900px){.halwa-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:520px){.halwa-grid{grid-template-columns:1fr}.halwa-prices{gap:6px}.halwa-card .halwa-img{aspect-ratio:4/3}}
+@media(max-width:520px){.halwa-grid{grid-template-columns:1fr}.halwa-prices{gap:6px}.halwa-card .halwa-img{aspect-ratio:4/3}.halwa-orders{gap:6px}.halwa-orders .btn-wa{font-size:.68rem;padding:9px 4px}}
 
 /* ============ STORY ============ */
 .story{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
@@ -218,6 +224,41 @@ footer small{display:block;margin-top:14px;opacity:.6}
   html{scroll-behavior:auto}
   *{animation:none!important}
 }
+
+/* ============ FINAL MOBILE RESPONSIVE FIX ============ */
+.brand{flex:0 0 auto}
+.brand img{width:74px!important;height:74px!important;min-width:74px;min-height:74px;max-width:74px;max-height:74px;object-fit:cover;border-radius:50%!important;clip-path:circle(50%);overflow:hidden}
+
+@media (max-width:900px){
+  .nav{padding:10px 16px;min-height:82px}
+  .brand img{width:64px!important;height:64px!important;min-width:64px;min-height:64px;max-width:64px;max-height:64px}
+  .burger{width:52px;height:48px;padding:8px 10px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .mobile-menu .nav-cta{display:block}
+  .mobile-menu .btn{width:100%;max-width:none}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+  .size-row{display:grid;grid-template-columns:88px minmax(0,1fr);align-items:center;gap:8px;flex-wrap:nowrap;padding:10px}
+  .size-row .btn{width:100%;min-width:0;max-width:none;flex:0 1 auto;padding:10px 8px;font-size:.76rem;min-height:44px;white-space:nowrap}
+  .card-body{padding:16px}
+}
+
+@media (max-width:600px){
+  .grid{grid-template-columns:1fr;gap:18px}
+  .card-img{aspect-ratio:4/3}
+  .card-body{padding:15px}
+  .size-row{grid-template-columns:78px minmax(0,1fr);gap:8px;padding:9px}
+  .size-w{font-size:.72rem}
+  .size-p{font-size:1.05rem}
+  .size-row .btn{font-size:.75rem;padding:10px 7px;min-height:44px}
+  .sizes{gap:8px}
+}
+
+@media (max-width:380px){
+  .nav{padding:8px 12px;min-height:76px}
+  .brand img{width:58px!important;height:58px!important;min-width:58px;min-height:58px;max-width:58px;max-height:58px}
+  .size-row{grid-template-columns:72px minmax(0,1fr);gap:6px}
+  .size-row .btn{font-size:.7rem;padding:9px 5px}
+}
+
 </style>
 </head>
 <body>
