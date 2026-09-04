@@ -75,9 +75,9 @@ header{
   border-bottom:1px solid rgba(199,154,60,.35);backdrop-filter:blur(8px);
 }
 .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 20px;max-width:var(--maxw);margin:0 auto}
-.brand{display:flex;flex-direction:column;line-height:1.1}
-.brand b{font-family:Marcellus,serif;font-weight:400;color:var(--cream);font-size:1.18rem;letter-spacing:.06em}
-.brand span{font-size:.6rem;letter-spacing:.28em;color:var(--gold);text-transform:uppercase}
+.brand{display:flex;align-items:center;line-height:1.1}
+.brand img{width:74px;height:74px;object-fit:contain;display:block}
+
 .nav-links{display:flex;align-items:center;gap:26px}
 .nav-links a{color:var(--cream);font-size:.92rem;font-weight:500;opacity:.9;position:relative;padding:4px 0}
 .nav-links a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:var(--gold);transition:width .25s}
@@ -226,8 +226,7 @@ footer small{display:block;margin-top:14px;opacity:.6}
 <header>
   <div class="nav">
     <a class="brand" href="#home" aria-label="Madugula Halwa home">
-      <b>MADUGULA HALWA</b>
-      <span>By Legacy &bull; Since 1890</span>
+      <img src="images/logo.png" width="180" height="180" alt="Madugula Halwa — By Legacy — Since 1890" />
     </a>
     <nav class="nav-links" aria-label="Main navigation">
       <a href="#home">Home</a>
