@@ -210,6 +210,8 @@ footer .flinks{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margi
 footer .flinks a{color:var(--gold-light);font-size:.9rem}
 footer .flinks a:hover{text-decoration:underline}
 footer small{display:block;margin-top:14px;opacity:.6}
+.client-name{margin:-8px 0 18px;color:var(--muted);font-size:.9rem}.client-name strong{color:var(--maroon)}
+.developer-credit{margin-top:18px;font-size:.82rem;color:rgba(246,236,217,.7)}.developer-credit a{color:var(--gold-light);font-weight:700;text-decoration:none}.developer-credit a:hover{text-decoration:underline}
 
 /* ============ FLOAT WA ============ */
 .float-wa{position:fixed;right:16px;bottom:16px;z-index:70;background:var(--wa);color:#fff;width:56px;height:56px;border-radius:50%;
@@ -302,8 +304,8 @@ footer small{display:block;margin-top:14px;opacity:.6}
     <div class="hero-in">
       <div>
         <p class="eyebrow">By Legacy &bull; Since 1890</p>
-        <h1>MADUGULA HALWA</h1>
-        <h2>A Legacy of Traditional Taste Since 1890</h2>
+        <h1>ORIGINAL MADUGULA HALWA</h1>
+        <h2>Original Madugula Halwa &amp; Traditional Taste Since 1890</h2>
         <p>Experience the rich taste of traditional Madugula Halwa and authentic Indian sweets, prepared with timeless recipes and cherished across generations.</p>
         <div class="hero-btns">
           <a class="btn btn-gold" href="#sweets">Explore Our Sweets</a>
@@ -312,8 +314,8 @@ footer small{display:block;margin-top:14px;opacity:.6}
       </div>
       <figure class="hero-figure" style="margin:0">
         <!-- HALWA IMAGE -->
-        <img src="images/halwa.jpg" width="1024" height="768" alt="Traditional Madugula Halwa served on a brass plate with cashews" onerror="imgFallback(this,'Madugula Halwa')" />
-        <figcaption class="badge">Traditional Madugula Halwa</figcaption>
+        <img src="images/halwa.jpg" width="1024" height="768" alt="Original Madugula Halwa served on a brass plate with cashews" onerror="imgFallback(this,'Madugula Halwa')" />
+        <figcaption class="badge">Original Madugula Halwa</figcaption>
       </figure>
     </div>
   </section>
@@ -437,6 +439,7 @@ footer small{display:block;margin-top:14px;opacity:.6}
       </div>
       <div class="contact-card reveal">
         <h3>MADUGULA HALWA</h3>
+        <p class="client-name">Client: <strong>Dasari Chandrasekhar</strong></p>
         <p class="tag">By Legacy &bull; Since 1890</p>
         <ul class="contact-list">
           <li><span>WhatsApp</span><a href="https://wa.me/919985014061" target="_blank" rel="noopener">9985014061</a></li>
@@ -463,6 +466,7 @@ footer small{display:block;margin-top:14px;opacity:.6}
     <a href="tel:+919985014061">Call</a>
     <a href="mailto:Chandu.bhanus@gmail.com">Email</a>
   </div>
+  <div class="developer-credit">Website developed by <a href="https://share.google/o9LCMqnr4fRilpcvX" target="_blank" rel="noopener">RAM AI Web Solutions</a></div>
   <small>Copyright &copy; Madugula Halwa</small>
 </footer>
 
@@ -527,6 +531,13 @@ var PRODUCTS = [
     img: "honey-halwa.png",        /* HONEY HALWA IMAGE */
     alt: "Golden honey halwa slice with honey drizzle on a brass plate",
     sizes: [ {w:"1 Kg", p:800}, {w:"\u00BD Kg", p:400}, {w:"\u00BC Kg", p:200} ]
+  },
+  {
+    name: "Honey",
+    desc: "100% original, 100% organic honey.",
+    img: "honey.png",              /* HONEY IMAGE */
+    alt: "100% original organic honey in a glass jar",
+    sizes: [ {w:"200 ml", p:200} ]
   }
 ];
 
