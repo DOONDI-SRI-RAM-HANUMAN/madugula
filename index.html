@@ -132,6 +132,37 @@ header{
 .card-body{padding:20px;display:flex;flex-direction:column;flex:1}
 .card h3{font-size:1.3rem;margin:0 0 4px;color:var(--maroon)}
 .card .desc{color:var(--muted);font-size:.9rem;margin:0 0 16px}
+
+/* Signature Halwa Collection — intentionally more premium than the other sweets */
+.card.halwa-special{
+  position:relative;
+  background:linear-gradient(180deg,#fffdf8 0%,#fff 62%);
+  border:1.5px solid var(--gold);
+  box-shadow:0 14px 38px rgba(90,18,32,.16),0 0 0 1px rgba(199,154,60,.10);
+}
+.card.halwa-special::before{
+  content:"SIGNATURE HALWA";
+  position:absolute;z-index:4;top:14px;left:14px;
+  background:linear-gradient(135deg,var(--gold),var(--gold-light));
+  color:var(--maroon-deep);padding:7px 12px;border-radius:999px;
+  font-size:.62rem;font-weight:800;letter-spacing:.16em;
+  box-shadow:0 5px 14px rgba(61,11,22,.18);
+}
+.card.halwa-special .card-img{aspect-ratio:4/3;border-bottom:3px solid var(--gold);}
+.card.halwa-special .card-img::after{
+  content:"";position:absolute;inset:auto 0 0;height:34%;
+  background:linear-gradient(transparent,rgba(61,11,22,.28));pointer-events:none;
+}
+.card.halwa-special .card-body{padding:22px 20px 20px}
+.card.halwa-special h3{font-size:1.48rem;color:var(--maroon-deep);}
+.card.halwa-special .desc{font-size:.92rem;color:#5d4639}
+.card.halwa-special .size-row{
+  background:linear-gradient(135deg,#fffaf0,#f8edd7);
+  border-color:rgba(199,154,60,.48);
+}
+.card.halwa-special .size-p{font-size:1.3rem;color:var(--maroon-deep);}
+.card.halwa-special .size-row .btn{box-shadow:0 6px 16px rgba(30,169,82,.20);}
+.card.halwa-special:hover{transform:translateY(-9px);box-shadow:0 22px 52px rgba(90,18,32,.22),0 0 0 2px rgba(199,154,60,.12);}
 .sizes{display:flex;flex-direction:column;gap:10px;margin-top:auto}
 .size-row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
   background:var(--offwhite);border:1px solid rgba(199,154,60,.28);border-radius:14px;padding:10px 10px 10px 14px}
@@ -423,22 +454,21 @@ var PRODUCTS = [
     desc: "Jaggery Halwa \u2014 deep, earthy sweetness the traditional way.",
     img: "images/bellam-halwa.jpg",       /* BELLAM HALWA IMAGE */
     alt: "Dark jaggery halwa slices on a brass plate",
-    sizes: [],
-    askName: "Bellam Halwa (Jaggery Halwa)"
+    sizes: [ {w:"1 Kg", p:800}, {w:"½ Kg", p:400}, {w:"¼ Kg", p:200} ]
   },
   {
     name: "Bellam Dry Fruit Halwa",
     desc: "Jaggery halwa generously loaded with dry fruits.",
     img: "images/bellam-dry-fruit-halwa.jpg", /* BELLAM DRY FRUIT HALWA IMAGE */
     alt: "Jaggery dry fruit halwa topped with cashews, almonds and pistachios",
-    sizes: []
+    sizes: [ {w:"1 Kg", p:800}, {w:"½ Kg", p:400}, {w:"¼ Kg", p:200} ]
   },
   {
     name: "Honey Halwa",
     desc: "Golden halwa finished with the warmth of honey.",
     img: "images/honey-halwa.jpg",        /* HONEY HALWA IMAGE */
     alt: "Golden honey halwa slice with honey drizzle on a brass plate",
-    sizes: []
+    sizes: [ {w:"1 Kg", p:800}, {w:"½ Kg", p:400}, {w:"¼ Kg", p:200} ]
   }
 ];
 
@@ -487,7 +517,9 @@ function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').rep
         '<a class="btn btn-wa btn-block" target="_blank" rel="noopener" href="' + askPriceOnWhatsApp(askName) + '" ' +
         'aria-label="Ask the price of ' + esc(p.name) + ' on WhatsApp">' + WA_ICON + 'Ask Price on WhatsApp</a></div>';
     }
-    return '<article class="card reveal">' +
+    var isHalwa = /halwa/i.test(p.name);
+    var cardClass = isHalwa ? 'card halwa-special reveal' : 'card reveal';
+    return '<article class="' + cardClass + '">' +
         '<div class="card-img"><img src="' + esc(p.img) + '" loading="lazy" width="1024" height="768" alt="' + esc(p.alt) + '" onerror="imgFallback(this,\'' + esc(p.name).replace(/'/g,"") + '\')" /></div>' +
         '<div class="card-body"><h3>' + esc(p.name) + '</h3><p class="desc">' + esc(p.desc) + '</p>' + body + '</div>' +
       '</article>';
