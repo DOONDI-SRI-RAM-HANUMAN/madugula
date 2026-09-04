@@ -239,7 +239,9 @@ footer small{display:block;margin-top:14px;opacity:.6}
 @media (max-width:900px){
   .nav{padding:10px 16px;min-height:82px}
   .owner-top{display:none}
-  .brand-side{display:none}
+  .brand-side{display:flex;min-width:0}
+  .brand-side strong{font-size:.92rem}
+  .brand-side small{font-size:.56rem;letter-spacing:.12em}
   .brand img{width:64px!important;height:64px!important;min-width:64px;min-height:64px;max-width:64px;max-height:64px}
   .burger{width:52px;height:48px;padding:8px 10px;display:flex;flex-direction:column;align-items:center;justify-content:center}
   .mobile-menu .nav-cta{display:block}
@@ -264,6 +266,9 @@ footer small{display:block;margin-top:14px;opacity:.6}
 @media (max-width:380px){
   .nav{padding:8px 12px;min-height:76px}
   .brand img{width:58px!important;height:58px!important;min-width:58px;min-height:58px;max-width:58px;max-height:58px}
+  .brand{gap:7px}
+  .brand-side strong{font-size:.82rem}
+  .brand-side small{font-size:.5rem;letter-spacing:.1em}
   .size-row{grid-template-columns:72px minmax(0,1fr);gap:6px}
   .size-row .btn{font-size:.7rem;padding:9px 5px}
 }
