@@ -75,7 +75,8 @@ header{
   border-bottom:1px solid rgba(199,154,60,.35);backdrop-filter:blur(8px);
 }
 .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 20px;max-width:var(--maxw);margin:0 auto}
-.brand{display:flex;align-items:center;line-height:1.1}
+.brand{display:flex;align-items:center;line-height:1.1;gap:10px;text-decoration:none}
+.owner-top{color:var(--cream);font-size:.72rem;letter-spacing:.04em;white-space:nowrap;opacity:.9}
 .brand img{width:74px;height:74px;object-fit:cover;display:block;border-radius:50%;aspect-ratio:1/1;border:2px solid rgba(229,194,117,.75);box-shadow:0 4px 14px rgba(0,0,0,.22)}
 
 .nav-links{display:flex;align-items:center;gap:26px}
@@ -106,16 +107,16 @@ header{
 .hero-in{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding:72px 20px 84px;max-width:var(--maxw);margin:0 auto}
 .hero h1{font-size:clamp(2.3rem,6.5vw,4rem);margin:6px 0 8px;color:#fff}
 .hero h2{font-size:clamp(1rem,2.4vw,1.35rem);color:var(--gold-light);margin:0 0 16px;font-weight:400}
-.hero p{color:rgba(246,236,217,.82);max-width:520px;margin:0 0 28px}
+.hero p{color:rgba(246,236,217,.82);max-width:520px;margin:0 0 28px}.hero-owner{margin:-6px 0 14px!important;color:var(--gold-light)!important;font-size:.95rem!important;letter-spacing:.02em}.hero-owner strong{color:#fff}
 .hero-btns{display:flex;flex-wrap:wrap;gap:14px}
 .hero-figure{position:relative;border-radius:24px;overflow:hidden;border:1px solid rgba(199,154,60,.5);box-shadow:var(--shadow-lg);display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(42,8,16,.35);min-height:0;aspect-ratio:auto}
-.hero-figure img{width:100%;height:auto;max-width:100%;max-height:none;object-fit:contain;object-position:center;padding:clamp(10px,2.2vw,20px);display:block;transition:transform .8s ease}
+.hero-figure img{width:auto;height:auto;max-width:100%;max-height:clamp(360px,68vh,680px);object-fit:contain;object-position:center;padding:clamp(8px,1.5vw,16px);display:block;transition:transform .8s ease}
 .hero-figure:hover img{transform:scale(1.03)}
 .badge{position:static;margin:0 18px 18px;background:rgba(61,11,22,.85);border:1px solid var(--gold);color:var(--gold-light);
   padding:8px 16px;border-radius:999px;font-size:.7rem;letter-spacing:.24em;text-transform:uppercase}
 @media(max-width:900px){
   .hero-in{grid-template-columns:1fr;padding:48px 20px 56px;gap:30px}
-  .hero-figure{width:min(100%,520px);margin:0 auto;aspect-ratio:auto}.hero-figure img{width:100%;height:auto;padding:14px}
+  .hero-figure{width:min(100%,520px);margin:0 auto;aspect-ratio:auto}.hero-figure img{width:auto;max-width:100%;height:auto;max-height:62vh;padding:10px}
 }
 
 /* ============ PRODUCT CARDS ============ */
@@ -211,6 +212,7 @@ footer .flinks a{color:var(--gold-light);font-size:.9rem}
 footer .flinks a:hover{text-decoration:underline}
 footer small{display:block;margin-top:14px;opacity:.6}
 .client-name{margin:-8px 0 18px;color:var(--muted);font-size:.9rem}.client-name strong{color:var(--maroon)}
+.owner-bottom{margin:8px 0 0;color:var(--gold-light);font-size:.84rem;font-weight:600}
 .developer-credit{margin-top:18px;font-size:.82rem;color:rgba(246,236,217,.7)}.developer-credit a{color:var(--gold-light);font-weight:700;text-decoration:none}.developer-credit a:hover{text-decoration:underline}
 
 /* ============ FLOAT WA ============ */
@@ -233,6 +235,7 @@ footer small{display:block;margin-top:14px;opacity:.6}
 
 @media (max-width:900px){
   .nav{padding:10px 16px;min-height:82px}
+  .owner-top{display:none}
   .brand img{width:64px!important;height:64px!important;min-width:64px;min-height:64px;max-width:64px;max-height:64px}
   .burger{width:52px;height:48px;padding:8px 10px;display:flex;flex-direction:column;align-items:center;justify-content:center}
   .mobile-menu .nav-cta{display:block}
@@ -268,8 +271,9 @@ footer small{display:block;margin-top:14px;opacity:.6}
 <!-- ============ HEADER ============ -->
 <header>
   <div class="nav">
-    <a class="brand" href="#home" aria-label="Madugula Halwa home">
+    <a class="brand" href="#home" aria-label="Dasari Brothers Madugula Halwa home">
       <img src="logo.jpeg" width="180" height="180" alt="Madugula Halwa — By Legacy — Since 1890" />
+      <span class="owner-top">Owner: Dasari Chandrasekhar</span>
     </a>
     <nav class="nav-links" aria-label="Main navigation">
       <a href="#home">Home</a>
@@ -306,6 +310,7 @@ footer small{display:block;margin-top:14px;opacity:.6}
         <p class="eyebrow">By Legacy &bull; Since 1890</p>
         <h1>DASARI BROTHERS MADUGULA HALWA</h1>
         <h2>Original Madugula Halwa from Dasari Brothers &amp; Traditional Taste Since 1890</h2>
+        <p class="hero-owner">Owner: <strong>Dasari Chandrasekhar</strong></p>
         <p>Experience the rich taste of traditional Madugula Halwa and authentic Indian sweets, prepared with timeless recipes and cherished across generations.</p>
         <div class="hero-btns">
           <a class="btn btn-gold" href="#sweets">Explore Our Sweets</a>
@@ -313,9 +318,8 @@ footer small{display:block;margin-top:14px;opacity:.6}
         </div>
       </div>
       <figure class="hero-figure" style="margin:0">
-        <!-- HALWA IMAGE -->
+        <!-- HERO LOGO IMAGE -->
         <img src="logo.jpeg" width="180" height="180" alt="Dasari Brothers Madugula Halwa logo" onerror="imgFallback(this,'Madugula Halwa')" />
-        <figcaption class="badge">Original Madugula Halwa</figcaption>
       </figure>
     </div>
   </section>
@@ -460,6 +464,7 @@ footer small{display:block;margin-top:14px;opacity:.6}
 <footer>
   <div class="fbrand">MADUGULA HALWA</div>
   <div class="fsub">By Legacy &bull; Since 1890</div>
+  <div class="owner-bottom">Owner: Dasari Chandrasekhar</div>
   <div>Traditional Taste &bull; Timeless Legacy</div>
   <div class="flinks">
     <a href="https://wa.me/919985014061" target="_blank" rel="noopener">WhatsApp</a>
